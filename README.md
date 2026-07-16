@@ -30,31 +30,6 @@
 | [malloc.md](malloc.md) | 动态内存分配详解（malloc/calloc/realloc/free） |
 | [header.md](header.md) | C 标准库头文件速查（stdio/stdlib/string/math…） |
 
----
-
-## 学习路线
-
-```
-Hello World → 变量运算 → 条件分支 → 数组
-    → 指针（基础 → 参数传递 → 动态内存）
-    → 字符串 → 结构体 → 共用体
-    → 可变参数 → 排序算法 → 综合练习
-```
-
----
-
-## 运行环境
-
-- **编译器**: GCC（MinGW-w64）
-- **系统**: Windows
-- **编码**: UTF-8（编译时加 `-fexec-charset=GBK` 避免终端中文乱码）
-
-```bash
-# C 代码编译运行
-gcc 文件名.c -o 文件名.exe -fexec-charset=GBK && ./文件名.exe
-```
-
----
 
 ## 核心速查
 
@@ -75,18 +50,3 @@ int *p = &a;       // p 存 a 的地址
 p->member          // 结构体指针访问成员（等价 (*p).member）
 ```
 
-### 内存
-
-| | 静态 | 动态 |
-|--|------|------|
-| 写法 | `int a[10]` | `malloc(n)` |
-| 位置 | 栈 | 堆 |
-| 释放 | 自动 | 手动 `free` |
-
-### struct vs union
-
-| | struct | union |
-|--|:--:|:--:|
-| 内存 | 各占各的 | 共享一块 |
-| 同时有效 | ✅ | ❌ |
-| 大小 | 成员之和 | 最大成员 |
